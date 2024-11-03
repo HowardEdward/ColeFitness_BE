@@ -1,16 +1,8 @@
 from contextlib import asynccontextmanager
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from fastapi import FastAPI
 from db.connectDB import Base, connectDB
-import os
-from pathlib import Path
-from dotenv import load_dotenv
-from controllers import UserController
-
-# Load environment variables
-dotenv_path = Path("environment/.env")
-load_dotenv(dotenv_path=dotenv_path)
+from controllers import EmployeeController, AccountController
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -18,7 +10,6 @@ async def lifespan(app: FastAPI):
     print("Starting up the application...")
     try:
         connect = connectDB()
-        app.include_router(UserController.router)
         if connect:
             print("Database connection established successfully")
             yield
@@ -30,11 +21,12 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan,
               title="Cole Fitness Center")
 
+app.include_router(EmployeeController.router)
+app.include_router(AccountController.router)
 @app.get("/")
 def main():
-    return {"message": "Hello World"}
-
+    return {"message": "Hello World !"}
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

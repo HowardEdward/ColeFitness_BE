@@ -1,0 +1,10 @@
+wheel
+python-dotenv
+fastapi
+sqlalchemy
+psycopg2-binary
+pydantic
+pydantic[email]
+uvicorn
+supabase
+Werkzeug
