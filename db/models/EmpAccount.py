@@ -4,13 +4,16 @@ from db.connectDB import Base
 
 class Account(Base):
     __tablename__ = "ACCOUNT"
+
+    # Define Columns
     AccountID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    EmployeeID = mapped_column(Integer, ForeignKey("EMPLOYEE.EmployeeID"),nullable=True)
+    EmployeeID = mapped_column(Integer, ForeignKey("EMPLOYEE.EmployeeID"))
     UserName = Column(String)
     Password = Column(String)
-    RoleKey = mapped_column(VARCHAR(10), nullable=True)
+    AccountType = Column(VARCHAR(10))
     Status = Column(Boolean, default=False)
 
+    # Initialize Relationships
     EmployeeRelationship = relationship("EMPLOYEE", back_populates="ACCOUNT")
     
 

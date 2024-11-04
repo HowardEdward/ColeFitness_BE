@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 from sqlalchemy import create_engine
 from fastapi import FastAPI
 from db.connectDB import Base, connectDB
-from controllers import EmployeeController, AccountController
+from controllers import EmpAccountController, EmployeeController
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -22,7 +22,7 @@ app = FastAPI(lifespan=lifespan,
               title="Cole Fitness Center")
 
 app.include_router(EmployeeController.router)
-app.include_router(AccountController.router)
+app.include_router(EmpAccountController.router)
 @app.get("/")
 def main():
     return {"message": "Hello World !"}

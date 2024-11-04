@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from db.models.Account import Account
-from schemas.AccountSchema import AccountSchema
+from db.models.EmpAccount import Account
+from schemas.EmpAccountSchema import AccountSchema
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class AccountServices:

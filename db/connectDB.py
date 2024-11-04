@@ -43,8 +43,8 @@ def connectDB(attempts=5, delay=2):
             if engine:
                 logger.debug("Engine created: %s", engine)
                 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-                Base.metadata.create_all(engine)
                 db = SessionLocal()
+                Base.metadata.create_all(engine)
                 logger.info("Connected to database")
                 return db
         except (Exception, psycopg2.OperationalError, RuntimeError) as error:

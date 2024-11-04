@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
-from schemas.AccountSchema import AccountSchema, PasswordSchema
+from schemas.EmpAccountSchema import AccountSchema, PasswordSchema
 from db import connectDB
-from services.AccountServices import AccountServices
+from services.EmpAccountServices import AccountServices
 
 router = APIRouter(prefix="/account", tags=["account"])
 
@@ -28,12 +28,12 @@ async def createAccount(account: AccountSchema, db: Session = Depends(connectDB.
         raise HTTPException(status_code=404, detail=response["message"])
     return response
 
-@router.put("/updateAccountByID/{id}")
-async def updateUser(id: int, account: AccountSchema, db: Session = Depends(connectDB.connectDB)):
-    response = AccountServices(db).updateAccountByID(id, account)
-    if response["status"] == 404:
-        raise HTTPException(status_code=404, detail=response["message"])
-    return response
+# @router.put("/updateAccountByID/{id}")
+# async def updateUser(id: int, account: AccountSchema, db: Session = Depends(connectDB.connectDB)):
+#     response = AccountServices(db).updateAccountByID(id, account)
+#     if response["status"] == 404:
+#         raise HTTPException(status_code=404, detail=response["message"])
+#     return response
 
 @router.delete("/deleteAccountByID/{id}")
 async def deleteUserByID(id: int, db: Session = Depends(connectDB.connectDB)):
