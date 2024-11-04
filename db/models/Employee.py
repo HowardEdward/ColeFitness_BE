@@ -12,10 +12,11 @@ class Employee(Base):
     DOB = Column(DATE)
     Picture = Column(BLOB, nullable=True)
     RoleKey = mapped_column(VARCHAR(10), ForeignKey("ROLE.RoleKey"),nullable=True)
-    ContactID = mapped_column(Integer, ForeignKey("CONTACT.ContactID"),nullable=True)
-    # BranchID = mapped_column(Integer, ForeignKey("BRANCH.BranchID"))
+    ContactID = mapped_column(Integer, ForeignKey("EMP_CONTACT.ContactID"),nullable=True)
+    AccountID = mapped_column(Integer, ForeignKey("EMP_ACCOUNT.AccountID"),nullable=True)
 
     # Initialize Relationships
     RoleRelationship = relationship("ROLE", back_populates="EMPLOYEE")
-    ContactRelationship = relationship("CONTACT", back_populates="EMPLOYEE")
+    ContactRelationship = relationship("EMP_CONTACT", back_populates="EMPLOYEE")
+    AccountRelationship = relationship("EMP_ACCOUNT", back_populates="EMPLOYEE")
     

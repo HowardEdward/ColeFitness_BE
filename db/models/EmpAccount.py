@@ -3,7 +3,7 @@ from sqlalchemy.orm import mapped_column, relationship
 from db.connectDB import Base
 
 class Account(Base):
-    __tablename__ = "ACCOUNT"
+    __tablename__ = "EMP_ACCOUNT"
 
     # Define Columns
     AccountID = Column(Integer, primary_key=True, autoincrement=True, default=1)
@@ -14,6 +14,6 @@ class Account(Base):
     Status = Column(Boolean, default=False)
 
     # Initialize Relationships
-    EmployeeRelationship = relationship("EMPLOYEE", back_populates="ACCOUNT")
+    EmployeeRelationship = relationship("EMPLOYEE", back_populates="EMP_ACCOUNT")
     
 

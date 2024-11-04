@@ -28,7 +28,7 @@ logger.addHandler(file_handler)
 
 Base = declarative_base()
 
-def connectDB(attempts=5, delay=2):
+def connectDB(BASE,attempts=5, delay=2):
     attempt = 1
     while attempt <= attempts:
         try:
@@ -44,7 +44,7 @@ def connectDB(attempts=5, delay=2):
                 logger.debug("Engine created: %s", engine)
                 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
                 db = SessionLocal()
-                Base.metadata.create_all(engine)
+                BASE.metadata.create_all(engine)
                 logger.info("Connected to database")
                 return db
         except (Exception, psycopg2.OperationalError, RuntimeError) as error:

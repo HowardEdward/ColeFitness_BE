@@ -1,15 +1,17 @@
 from contextlib import asynccontextmanager
 from sqlalchemy import create_engine
 from fastapi import FastAPI
-from db.connectDB import Base, connectDB
+from db.connectDB import connectDB
 from controllers import EmpAccountController, EmployeeController
+from sqlalchemy.ext.declarative import declarative_base
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: set up database connection
     print("Starting up the application...")
     try:
-        connect = connectDB()
+        Base = declarative_base()
+        connect = connectDB(Base)
         if connect:
             print("Database connection established successfully")
             yield
