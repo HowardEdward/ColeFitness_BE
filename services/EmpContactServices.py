@@ -1,16 +1,17 @@
 from sqlalchemy.orm import Session
-from db.models.Role import Role
-from schemas.RoleSchema import RoleSchema
+from db.models.EmpContact import EmpContact
+from schemas.EmpContactSchema import EmpContactSchema
 
-class RoleServices:
+
+class EmpContactServices:
     def __init__(self, db: Session):
         self.db = db
-
-    def getAllRole(self):
+    
+    def getAllContact(self):
         response = {}
-        data = self.db.query(Role).all()
+        data = self.db.query(EmpContact).all()
         if not data:
-            response["message"] = "No role found !"
+            response["message"] = "No contact found"
             response["status"] = 404
             return response
         response["data"] = data

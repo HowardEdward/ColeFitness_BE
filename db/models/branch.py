@@ -1,16 +1,16 @@
-from sqlalchemy import String, Column, Integer, ForeignKey
+from sqlalchemy import String, Column, Integer, ForeignKey, VARCHAR
 from sqlalchemy.orm import relationship, mapped_column
 from db.connectDB import Base
 
 class Branch(Base):
-    __tablename__ = "BRANCH"
+    __tablename__ = "branch"
 
     # Define Columns
     BranchID = Column(Integer, primary_key=True, autoincrement=True, default=1)
+    BranchName = Column(VARCHAR(30))
     BranchPhoneNumber = Column(Integer)
     BranchEmailAddress = Column(String)
     BranchAddress = Column(String)
-    ManagerID = mapped_column(Integer, ForeignKey("EMPLOYEE.EmployeeID"), nullable=True)
-    
+    EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
     # Initialize Relationships
-    ManagerRelationship = relationship("EMPLOYEE", back_populates="BRANCH")
+    # EmployeeRelationship = relationship("employee", back_populates="branch")

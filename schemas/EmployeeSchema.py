@@ -1,11 +1,13 @@
-from pydantic import BaseModel, EmailStr
-from datetime import date, datetime
+from pydantic import BaseModel
+from datetime import date
 
 class EmployeeSchema(BaseModel):
     FirstName: str
     MiddleName: str = None
     LastName: str
     DOB: date
-    RoleKey: str = None
-    ContactID: int = None
+    Gender: str
+    Height: float
+    Weight: float
+    
     # = None means optional, allows null values

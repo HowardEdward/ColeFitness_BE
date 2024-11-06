@@ -6,14 +6,14 @@ class EmployeeServices:
     def __init__(self, db: Session):
         self.db = db
     
-    def createEmployee(self, Employee: EmployeeSchema) -> dict:
+    def createEmployee(self, employee: EmployeeSchema) -> dict:
         response = {}
-        newEmployee = Employee(**dict(Employee))
-        self.db.add(newEmployee)
+        newEmployee = Employee(**dict(employee))
         if not newEmployee:
             response["message"] = "Error creating Employee"
             response["status"] = 404
             return response
+        self.db.add(newEmployee)
         self.db.commit()
         response["data"] = newEmployee
         response["status"] = 200

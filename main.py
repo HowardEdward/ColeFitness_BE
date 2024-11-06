@@ -1,17 +1,13 @@
 from contextlib import asynccontextmanager
-from sqlalchemy import create_engine
 from fastapi import FastAPI
 from db.connectDB import connectDB
-from controllers import EmpAccountController, EmployeeController
-from sqlalchemy.ext.declarative import declarative_base
-
+from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: set up database connection
     print("Starting up the application...")
     try:
-        Base = declarative_base()
-        connect = connectDB(Base)
+        connect = connectDB()
         if connect:
             print("Database connection established successfully")
             yield
@@ -22,9 +18,11 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan,
               title="Cole Fitness Center")
-
-app.include_router(EmployeeController.router)
 app.include_router(EmpAccountController.router)
+app.include_router(EmployeeController.router)
+app.include_router(BranchController.router)
+app.include_router(RoleController.router)
+app.include_router(EmpContactController.router)
 @app.get("/")
 def main():
     return {"message": "Hello World !"}

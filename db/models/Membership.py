@@ -1,16 +1,17 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, VARCHAR, DATE
 from sqlalchemy.orm import mapped_column, relationship
-from db.connectDB import Base
+from db.connectDB import connectDB
 
-class Membership(Base):
+connectDB = connectDB()
+class Membership(connectDB.Base):
     __tablename__ = "MEMBERSHIP"
 
     # Define Columns
     MembershipID = Column(Integer, primary_key=True, autoincrement=True, default=1)
     MembershipType = Column(VARCHAR(10))
-    MembershipDuration = Column(String)
-    MembershipDescription = Column(String)
     MembershipPrice = Column(Integer)
+    MembershipDescription = Column(String)
+    MembershipDuration = Column(String)
     StartingDate = Column(DATE)
     ExpireDate = Column(DATE)
 

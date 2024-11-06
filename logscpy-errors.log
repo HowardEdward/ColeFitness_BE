@@ -1,7 +1,348 @@
-2024-11-03 20:50:19,054:INFO:db.connectDB:Connected to database
-2024-11-03 20:51:32,818:INFO:db.connectDB:Connected to database
-2024-11-03 20:55:16,655:INFO:db.connectDB:Connected to database
-2024-11-03 20:55:47,684:INFO:db.connectDB:Connected to database
-2024-11-03 20:59:35,685:INFO:db.connectDB:Connected to database
-2024-11-03 20:59:38,261:INFO:db.connectDB:Connected to database
-2024-11-03 21:03:46,052:INFO:db.connectDB:Connected to database
+2024-11-06 01:42:47,902:INFO:db.connectDB:Connected to database
+2024-11-06 01:44:26,434:INFO:db.connectDB:Connected to database
+2024-11-06 01:52:14,365:INFO:db.connectDB:Connected to database
+2024-11-06 01:55:21,145:INFO:db.connectDB:Connected to database
+2024-11-06 01:59:51,295:INFO:db.connectDB:Connected to database
+2024-11-06 02:01:20,775:INFO:db.connectDB:Connected to database
+2024-11-06 02:05:53,831:INFO:db.connectDB:Connected to database
+2024-11-06 02:08:59,355:INFO:db.connectDB:Connected to database
+2024-11-06 02:10:44,648:INFO:db.connectDB:Connected to database
+2024-11-06 02:12:25,487:INFO:db.connectDB:Connected to database
+2024-11-06 02:14:04,254:INFO:db.connectDB:Connected to database
+2024-11-06 02:18:38,539:INFO:db.connectDB:Connected to database
+2024-11-06 02:21:52,167:INFO:db.connectDB:Connected to database
+2024-11-06 02:23:27,148:INFO:db.connectDB:Connected to database
+2024-11-06 02:25:02,191:INFO:db.connectDB:Connected to database
+2024-11-06 02:27:51,147:INFO:db.connectDB:Connected to database
+2024-11-06 02:29:24,716:INFO:db.connectDB:Connected to database
+2024-11-06 02:33:36,823:INFO:db.connectDB:Connected to database
+2024-11-06 02:35:07,512:INFO:db.connectDB:Connected to database
+2024-11-06 02:36:43,628:INFO:db.connectDB:Connected to database
+2024-11-06 02:38:15,671:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"ManagerID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
+2024-11-06 02:38:20,457:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"ManagerID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
+2024-11-06 02:38:27,303:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"ManagerID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
+2024-11-06 02:38:38,074:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"ManagerID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
+2024-11-06 02:38:56,905:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"ManagerID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-11-06 02:39:59,411:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
+2024-11-06 02:40:04,211:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
+2024-11-06 02:40:11,108:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
+2024-11-06 02:40:21,997:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
+2024-11-06 02:40:40,906:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-11-06 02:41:40,626:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
+2024-11-06 02:41:45,469:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
+2024-11-06 02:41:52,215:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
+2024-11-06 02:42:03,020:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
+2024-11-06 02:42:21,894:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-11-06 02:46:12,120:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
+2024-11-06 02:46:17,150:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
+2024-11-06 02:46:24,008:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
+2024-11-06 02:46:34,925:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
+2024-11-06 02:46:53,729:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+
+[SQL: 
+CREATE TABLE branch (
+	"BranchID" INTEGER NOT NULL, 
+	"BranchName" VARCHAR(30), 
+	"BranchPhoneNumber" INTEGER, 
+	"BranchEmailAddress" VARCHAR, 
+	"BranchAddress" VARCHAR, 
+	"EmployeeID" INTEGER, 
+	PRIMARY KEY ("BranchID"), 
+	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2024-11-06 02:47:51,837:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (1/4)...
+2024-11-06 02:47:56,525:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (2/4)...
+2024-11-06 02:48:03,353:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (3/4)...
+2024-11-06 02:48:14,044:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (4/4)...
+2024-11-06 02:48:32,774:INFO:db.connectDB:Failed to connect, exiting without a connection: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'
+2024-11-06 02:49:26,003:INFO:db.connectDB:Connected to database
+2024-11-06 02:52:23,179:INFO:db.connectDB:Connected to database
+2024-11-06 02:53:54,729:INFO:db.connectDB:Connected to database

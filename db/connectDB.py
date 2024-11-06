@@ -7,7 +7,6 @@ import psycopg2
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-
 dotenv_path = Path("environment/.env")
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -27,8 +26,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 Base = declarative_base()
-
-def connectDB(BASE,attempts=5, delay=2):
+def connectDB(attempts=5, delay=2):
     attempt = 1
     while attempt <= attempts:
         try:
@@ -39,12 +37,13 @@ def connectDB(BASE,attempts=5, delay=2):
                 return None
             print("Connecting to database...")
             engine = create_engine(DB_URL)
+            Base.metadata.create_all(engine)
             #Create Session
             if engine:
                 logger.debug("Engine created: %s", engine)
                 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
                 db = SessionLocal()
-                BASE.metadata.create_all(engine)
+                Base.metadata.create_all(engine)
                 logger.info("Connected to database")
                 return db
         except (Exception, psycopg2.OperationalError, RuntimeError) as error:

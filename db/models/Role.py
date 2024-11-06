@@ -1,11 +1,12 @@
 from sqlalchemy import Column, Integer, VARCHAR
-from sqlalchemy.orm import mapped_column, relationship
 from db.connectDB import Base
 
 class Role(Base):
-    __tablename__ = "ROLE"
+    __tablename__ = "role"
 
     # Define Columns
     RoleID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    RoleKey = Column(VARCHAR(10))
+    RoleKey = Column(VARCHAR(10), key="RoleKey", unique=True)
     RoleName = Column(VARCHAR(30))
+
+# Base.metadata.create_all(engine)

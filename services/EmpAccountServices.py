@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session
-from db.models.EmpAccount import Account
-from schemas.EmpAccountSchema import AccountSchema
+from db.models.EmpAccount import EmpAccount
+from schemas.EmpAccountSchema import EmpAccountSchema, EmpAccountPasswordSchema
 from werkzeug.security import generate_password_hash, check_password_hash
 
-class AccountServices:
+class EmpAccountServices:
     def __init__(self, db: Session):
         self.db = db
 
-    def createAccount(self, account: AccountSchema):
+    def createAccount(self, account: EmpAccountSchema):
         response = {}
         if account.Password:
             password_hash = self.hashPassword(account.Password)
@@ -17,12 +17,12 @@ class AccountServices:
             response["status"] = 404
             return response
         account.Password = password_hash
-        newAccount = Account(**dict(account))
-        self.db.add(newAccount)
+        newAccount = EmpAccount(**dict(account))
         if not newAccount:
             response["message"] = "Error creating account"
             response["status"] = 404
             return response
+        self.db.add(newAccount)
         self.db.commit()
         response["data"] = newAccount
         response["status"] = 200
@@ -31,7 +31,7 @@ class AccountServices:
 
     def getAllAccounts(self):
         response = {}
-        data = self.db.query(Account).all()
+        data = self.db.query(EmpAccount).all()
         if not data:
             response["message"] = "No accounts found"
             response["status"] = 404
@@ -43,7 +43,7 @@ class AccountServices:
 
     def getAccountByID(self, id: int):
         response = {}
-        data = self.db.query(Account).filter(Account.AccountID == id).first()
+        data = self.db.query(EmpAccount).filter(EmpAccount.EmpAccountID == id).first()
         if not data:
             response["message"] = "Account not found"
             response["status"] = 404
@@ -55,7 +55,7 @@ class AccountServices:
 
     def deleteAccountByID(self, id: int):
         response = {}
-        data = self.db.query(Account).filter(Account.AccountID == id).first()
+        data = self.db.query(EmpAccount).filter(EmpAccount.EmpAccountID == id).first()
         if not data:
             response["message"] = "Account not found"
             response["status"] = 404
@@ -67,7 +67,7 @@ class AccountServices:
         response["message"] = "Success"
         return response
 
-    # def updateAccountByID(self, id: int, account: AccountSchema):
+    # def updateAccountByID(self, id: int, account: EmpAccountSchema):
     #     response = {}
     #     data = self.db.query(Account).filter(Account.AccountID == id).first()
     #     if not data:
@@ -84,9 +84,9 @@ class AccountServices:
     #     response["message"] = "Success"
     #     return response
 
-    def updatePasswordByID(self, id: int, password: str):
+    def updatePasswordByID(self, id: int, password: EmpAccountPasswordSchema):
         response = {}
-        data = self.db.query(Account).filter(Account.AccountID == id).first()
+        data = self.db.query(EmpAccount).filter(EmpAccount.EmpAccountID == id).first()
         if not data:
             response["message"] = "Account not found"
             response["status"] = 404

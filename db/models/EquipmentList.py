@@ -3,12 +3,12 @@ from sqlalchemy.orm import mapped_column, relationship
 from db.connectDB import Base
 
 class EquipmentList(Base):
-    __tablename__ = "EQUIPMENT_LIST"
+    __tablename__ = "equipment_list"
 
     # Define Columns
     EquipmentListID = Column(Integer, primary_key=True, autoincrement=True, default=1)
     Quantity = Column(Integer)
-    EquipmentID = mapped_column(Integer, ForeignKey("EQUIPMENT.EquipmentID"), nullable=True)
+    EquipmentName = mapped_column(Integer, ForeignKey("equipment.EquipmentName"), nullable=True)
 
     # Initialize Relationship
-    EquipmentRelationship = relationship("EQUIPMENT", back_populates="EquipmentListRelationship")
+    EquipmentRelationship = relationship("equipment", back_populates="equipment_list")
