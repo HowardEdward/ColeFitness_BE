@@ -1,348 +1,470 @@
-2024-11-06 01:42:47,902:INFO:db.connectDB:Connected to database
-2024-11-06 01:44:26,434:INFO:db.connectDB:Connected to database
-2024-11-06 01:52:14,365:INFO:db.connectDB:Connected to database
-2024-11-06 01:55:21,145:INFO:db.connectDB:Connected to database
-2024-11-06 01:59:51,295:INFO:db.connectDB:Connected to database
-2024-11-06 02:01:20,775:INFO:db.connectDB:Connected to database
-2024-11-06 02:05:53,831:INFO:db.connectDB:Connected to database
-2024-11-06 02:08:59,355:INFO:db.connectDB:Connected to database
-2024-11-06 02:10:44,648:INFO:db.connectDB:Connected to database
-2024-11-06 02:12:25,487:INFO:db.connectDB:Connected to database
-2024-11-06 02:14:04,254:INFO:db.connectDB:Connected to database
-2024-11-06 02:18:38,539:INFO:db.connectDB:Connected to database
-2024-11-06 02:21:52,167:INFO:db.connectDB:Connected to database
-2024-11-06 02:23:27,148:INFO:db.connectDB:Connected to database
-2024-11-06 02:25:02,191:INFO:db.connectDB:Connected to database
-2024-11-06 02:27:51,147:INFO:db.connectDB:Connected to database
-2024-11-06 02:29:24,716:INFO:db.connectDB:Connected to database
-2024-11-06 02:33:36,823:INFO:db.connectDB:Connected to database
-2024-11-06 02:35:07,512:INFO:db.connectDB:Connected to database
-2024-11-06 02:36:43,628:INFO:db.connectDB:Connected to database
-2024-11-06 02:38:15,671:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-06 04:52:50,389:INFO:db.connectDB:Connected to database
+2024-11-06 04:56:01,778:INFO:db.connectDB:Connected to database
+2024-11-07 20:06:26,814:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"ManagerID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 20:47:29,008:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
-2024-11-06 02:38:20,457:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 20:48:13,199:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"ManagerID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 20:48:59,415:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
-2024-11-06 02:38:27,303:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-07 20:49:49,607:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"ManagerID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (4/4)...
+2024-11-07 20:50:47,832:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-11-07 20:56:23,222:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 20:57:07,416:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 20:57:53,607:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-07 20:58:43,773:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (4/4)...
+2024-11-07 20:59:41,982:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-11-07 21:00:42,085:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:00:44,088:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (2/4)...
+2024-11-07 21:00:48,090:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (3/4)...
+2024-11-07 21:00:56,091:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (4/4)...
+2024-11-07 21:01:12,090:INFO:db.connectDB:Failed to connect, exiting without a connection: create_engine() missing 1 required positional argument: 'url'
+2024-11-07 21:02:19,089:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:02:21,092:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (2/4)...
+2024-11-07 21:02:25,093:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (3/4)...
+2024-11-07 21:02:33,098:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (4/4)...
+2024-11-07 21:02:49,099:INFO:db.connectDB:Failed to connect, exiting without a connection: create_engine() missing 1 required positional argument: 'url'
+2024-11-07 21:28:40,804:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:29:25,036:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:29:29,045:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (3/4)...
+2024-11-07 21:29:37,042:INFO:db.connectDB:Connection failed: create_engine() missing 1 required positional argument: 'url'. Retrying (4/4)...
+2024-11-07 21:29:53,044:INFO:db.connectDB:Failed to connect, exiting without a connection: create_engine() missing 1 required positional argument: 'url'
+2024-11-07 21:31:38,550:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:32:22,731:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:32:26,734:INFO:db.connectDB:Connection failed: Invalid argument(s) 'host','port','database','user','password' sent to create_engine(), using configuration PGDialect_psycopg2/QueuePool/Engine.  Please check that the keyword arguments are appropriate for this combination of components.. Retrying (3/4)...
+2024-11-07 21:32:34,732:INFO:db.connectDB:Connection failed: Invalid argument(s) 'host','port','database','user','password' sent to create_engine(), using configuration PGDialect_psycopg2/QueuePool/Engine.  Please check that the keyword arguments are appropriate for this combination of components.. Retrying (4/4)...
+2024-11-07 21:32:50,734:INFO:db.connectDB:Failed to connect, exiting without a connection: Invalid argument(s) 'host','port','database','user','password' sent to create_engine(), using configuration PGDialect_psycopg2/QueuePool/Engine.  Please check that the keyword arguments are appropriate for this combination of components.
+2024-11-07 21:35:27,658:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:36:53,995:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:36:57,998:INFO:db.connectDB:Connection failed: URL.__new__() got an unexpected keyword argument 'user'. Retrying (3/4)...
+2024-11-07 21:37:05,998:INFO:db.connectDB:Connection failed: URL.__new__() got an unexpected keyword argument 'user'. Retrying (4/4)...
+2024-11-07 21:37:22,001:INFO:db.connectDB:Failed to connect, exiting without a connection: URL.__new__() got an unexpected keyword argument 'user'
+2024-11-07 21:38:07,741:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:38:51,931:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:38:55,932:INFO:db.connectDB:Connection failed: URL.__new__() missing 2 required positional arguments: 'drivername' and 'query'. Retrying (3/4)...
+2024-11-07 21:39:03,931:INFO:db.connectDB:Connection failed: URL.__new__() missing 2 required positional arguments: 'drivername' and 'query'. Retrying (4/4)...
+2024-11-07 21:39:19,933:INFO:db.connectDB:Failed to connect, exiting without a connection: URL.__new__() missing 2 required positional arguments: 'drivername' and 'query'
+2024-11-07 21:40:47,639:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:41:31,816:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:41:35,818:INFO:db.connectDB:Connection failed: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "charset"
+
 (Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
-2024-11-06 02:38:38,074:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:41:43,820:INFO:db.connectDB:Connection failed: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "charset"
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"ManagerID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
-)
-
-]
 (Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
-2024-11-06 02:38:56,905:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:41:59,824:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "charset"
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"ManagerID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("ManagerID") REFERENCES employee ("EmployeeID")
-)
-
-]
 (Background on this error at: https://sqlalche.me/e/20/f405)
-2024-11-06 02:39:59,411:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:43:28,041:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:44:54,483:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
-2024-11-06 02:40:04,211:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:44:58,485:INFO:db.connectDB:Connection failed: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "encoding"
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
-
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
-2024-11-06 02:40:11,108:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
-
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
-
-]
 (Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
-2024-11-06 02:40:21,997:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:45:06,485:INFO:db.connectDB:Connection failed: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "encoding"
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
-
-]
 (Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
-2024-11-06 02:40:40,906:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:45:22,489:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "encoding"
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
-
-]
 (Background on this error at: https://sqlalche.me/e/20/f405)
-2024-11-06 02:41:40,626:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+2024-11-07 21:46:08,128:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-07 21:46:52,532:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (54.177.55.191), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
-2024-11-06 02:41:45,469:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-07 21:46:56,533:INFO:db.connectDB:Connection failed: URL.__new__() missing 1 required positional argument: 'query'. Retrying (3/4)...
+2024-11-07 21:47:04,532:INFO:db.connectDB:Connection failed: URL.__new__() missing 1 required positional argument: 'query'. Retrying (4/4)...
+2024-11-07 21:47:20,534:INFO:db.connectDB:Failed to connect, exiting without a connection: URL.__new__() missing 1 required positional argument: 'query'
+2024-11-07 23:26:26,458:INFO:db.connectDB:Connected to database
+2024-11-09 00:31:29,880:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 00:31:31,885:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
-2024-11-06 02:41:52,215:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 00:31:35,888:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 00:31:47,460:INFO:db.connectDB:Connected to database
+2024-11-09 00:39:09,037:INFO:db.connectDB:Connected to database
+2024-11-09 03:09:55,639:INFO:db.connectDB:Connected to database
+2024-11-09 03:10:48,202:INFO:db.connectDB:Connected to database
+2024-11-09 03:13:35,629:INFO:db.connectDB:Connected to database
+2024-11-09 03:14:04,192:INFO:db.connectDB:Connected to database
+2024-11-09 03:15:40,597:INFO:db.connectDB:Connected to database
+2024-11-09 03:17:02,647:INFO:db.connectDB:Connected to database
+2024-11-09 03:18:39,234:INFO:db.connectDB:Connected to database
+2024-11-09 03:18:41,921:INFO:db.connectDB:Connected to database
+2024-11-09 03:18:54,003:INFO:db.connectDB:Connected to database
+2024-11-09 03:19:38,522:INFO:db.connectDB:Connected to database
+2024-11-09 03:19:54,562:INFO:db.connectDB:Connected to database
+2024-11-09 03:25:46,771:INFO:db.connectDB:Connected to database
+2024-11-09 03:25:58,696:INFO:db.connectDB:Connected to database
+2024-11-09 03:28:10,362:INFO:db.connectDB:Connected to database
+2024-11-09 03:28:53,459:INFO:db.connectDB:Connected to database
+2024-11-09 03:44:29,663:INFO:db.connectDB:Connected to database
+2024-11-09 03:46:10,041:INFO:db.connectDB:Connected to database
+2024-11-09 03:47:06,426:INFO:db.connectDB:Connected to database
+2024-11-09 03:48:02,614:INFO:db.connectDB:Connected to database
+2024-11-09 03:48:11,363:INFO:db.connectDB:Connected to database
+2024-11-09 03:50:22,830:INFO:db.connectDB:Connected to database
+2024-11-09 03:50:35,581:INFO:db.connectDB:Connected to database
+2024-11-09 03:55:51,992:INFO:db.connectDB:Connected to database
+2024-11-09 03:56:05,150:INFO:db.connectDB:Connected to database
+2024-11-09 03:58:15,561:INFO:db.connectDB:Connection failed: Can't sort tables for DROP; an unresolvable foreign key dependency exists between tables: emp_account, emp_contact, employee.  Please ensure that the ForeignKey and ForeignKeyConstraint objects involved in the cycle have names so that they can be dropped using DROP CONSTRAINT.. Retrying (1/4)...
+2024-11-09 03:58:19,454:INFO:db.connectDB:Connection failed: Can't sort tables for DROP; an unresolvable foreign key dependency exists between tables: emp_account, emp_contact, employee.  Please ensure that the ForeignKey and ForeignKeyConstraint objects involved in the cycle have names so that they can be dropped using DROP CONSTRAINT.. Retrying (2/4)...
+2024-11-09 03:58:23,457:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
-2024-11-06 02:42:03,020:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 03:58:31,460:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (4/4)...
+2024-11-09 03:58:47,461:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
-2024-11-06 02:42:21,894:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-11-09 04:02:11,447:INFO:db.connectDB:Connected to database
+2024-11-09 04:03:09,572:INFO:db.connectDB:Connected to database
+2024-11-09 04:04:03,947:INFO:db.connectDB:Connected to database
+2024-11-09 04:08:44,631:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "aws-0-us-west-1.pooler.supabase.com" (52.8.172.168), port 6543 failed: malformed SCRAM message (attribute "r" expected)
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:10:00,920:INFO:db.connectDB:Connected to database
+2024-11-09 04:10:03,384:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2024-11-06 02:46:12,120:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:11:59,082:INFO:db.connectDB:Connected to database
+2024-11-09 04:12:34,766:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:12:39,887:INFO:db.connectDB:Connected to database
+2024-11-09 04:13:17,442:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (1/4)...
-2024-11-06 02:46:17,150:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:13:19,447:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:13:23,449:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (2/4)...
-2024-11-06 02:46:24,008:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:13:36,403:INFO:db.connectDB:Connected to database
+2024-11-09 04:15:01,094:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:15:31,619:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (3/4)...
-2024-11-06 02:46:34,925:INFO:db.connectDB:Connection failed: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:15:33,623:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:15:37,625:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405). Retrying (4/4)...
-2024-11-06 02:46:53,729:INFO:db.connectDB:Failed to connect, exiting without a connection: (psycopg2.errors.UndefinedColumn) column "EmployeeID" referenced in foreign key constraint does not exist
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:15:47,778:INFO:db.connectDB:Connected to database
+2024-11-09 04:17:05,270:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-[SQL: 
-CREATE TABLE branch (
-	"BranchID" INTEGER NOT NULL, 
-	"BranchName" VARCHAR(30), 
-	"BranchPhoneNumber" INTEGER, 
-	"BranchEmailAddress" VARCHAR, 
-	"BranchAddress" VARCHAR, 
-	"EmployeeID" INTEGER, 
-	PRIMARY KEY ("BranchID"), 
-	FOREIGN KEY("EmployeeID") REFERENCES employee ("EmployeeID")
-)
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:17:07,278:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
 
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-2024-11-06 02:47:51,837:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (1/4)...
-2024-11-06 02:47:56,525:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (2/4)...
-2024-11-06 02:48:03,353:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (3/4)...
-2024-11-06 02:48:14,044:INFO:db.connectDB:Connection failed: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'. Retrying (4/4)...
-2024-11-06 02:48:32,774:INFO:db.connectDB:Failed to connect, exiting without a connection: Could not initialize target column for ForeignKey 'employee.employeeid' on table 'branch': table 'employee' has no column named 'employeeid'
-2024-11-06 02:49:26,003:INFO:db.connectDB:Connected to database
-2024-11-06 02:52:23,179:INFO:db.connectDB:Connected to database
-2024-11-06 02:53:54,729:INFO:db.connectDB:Connected to database
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:17:11,280:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:17:22,027:INFO:db.connectDB:Connected to database
+2024-11-09 04:20:47,422:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:20:49,426:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:20:53,428:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:21:04,051:INFO:db.connectDB:Connected to database
+2024-11-09 04:24:05,771:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:24:07,776:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:24:11,776:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:24:21,732:INFO:db.connectDB:Connected to database
+2024-11-09 04:24:27,858:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:24:29,861:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:24:33,864:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:24:43,786:INFO:db.connectDB:Connected to database
+2024-11-09 04:31:19,342:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-09 04:31:21,350:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-09 04:31:25,352:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-09 04:31:35,287:INFO:db.connectDB:Connected to database
+2024-11-10 09:59:23,152:INFO:db.connectDB:Connected to database
+2024-11-11 21:26:46,891:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (1/4)...
+2024-11-11 21:26:48,903:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (2/4)...
+2024-11-11 21:26:52,906:INFO:db.connectDB:Connection failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8). Retrying (3/4)...
+2024-11-11 21:27:10,144:INFO:db.connectDB:Connected to database

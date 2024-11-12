@@ -6,6 +6,7 @@ class BranchServices:
     def __init__(self, db: Session):
         self.db = db
 
+    @classmethod
     def createBranch(self, branch: BranchSchema):
         response = {}
         newBranch = Branch(**dict(branch))

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, VARCHAR, DATE, LargeBinary as BLOB, ForeignKey, FLOAT
+from sqlalchemy import Column, Integer, VARCHAR, DATE, LargeBinary as BLOB, ForeignKey, FLOAT, event, DDL
 from sqlalchemy.orm import mapped_column, relationship
 from db.connectDB import Base
 
@@ -6,7 +6,7 @@ class Employee(Base):
     __tablename__ = "employee"
 
     # Define Columns
-    EmployeeID = Column(Integer, primary_key=True, autoincrement=True, default=1)
+    EmployeeID = Column(Integer, primary_key=True, nullable=False, autoincrement=True, default=1, unique=True)
     FirstName = Column(VARCHAR(30))
     MiddleName = Column(VARCHAR(30), nullable=True)
     LastName = Column(VARCHAR(30))

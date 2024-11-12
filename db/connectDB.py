@@ -1,16 +1,12 @@
 import logging
 import time
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.engine.url import URL
 import psycopg2
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-dotenv_path = Path("environment/.env")
-load_dotenv(dotenv_path=dotenv_path)
-
-#Setup Logger
+from dotenv import load_dotenv#Setup Logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s:%(levelname)s:%(name)s:%(message)s")
@@ -21,23 +17,37 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 # Also log to a file
-file_handler = logging.FileHandler("logs\\cpy-errors.log")
+file_handler = logging.FileHandler("logs\cpy-errors.log")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
+dotenv_path = Path("environment/.env")
+load_dotenv(dotenv_path=dotenv_path)
 
 Base = declarative_base()
+DB_DICT = {
+    "drivername": "postgresql+psycopg2",
+    "host": os.environ.get("DOCKER_DB_HOST"),
+    "port": os.environ.get("DOCKER_DB_PORT"),
+    "database": os.environ.get("DOCKER_DB_NAME"),
+    "username": os.environ.get("DOCKER_DB_USER"),
+    "password": os.environ.get("DOCKER_DB_PSWD"),
+    "query": {"sslmode": "disable"}
+}
+
 def connectDB(attempts=5, delay=2):
     attempt = 1
     while attempt <= attempts:
         try:
             #Create Engine
-            DB_URL = os.environ.get("DB_URL")
-            if not DB_URL:
-                logger.error("DB_URL environment variable is not set")
-                return None
-            print("Connecting to database...")
-            engine = create_engine(DB_URL)
-            Base.metadata.create_all(engine)
+            if attempt > 3:
+                DB_URL = os.environ.get("DB_URL")
+                if not DB_URL:
+                    logger.error("DB_URL environment variable is not set")
+                    return None
+                print("Connecting to database...")
+                engine = create_engine(DB_URL)
+            else:
+                engine = create_engine(URL.create(**DB_DICT))
             #Create Session
             if engine:
                 logger.debug("Engine created: %s", engine)
