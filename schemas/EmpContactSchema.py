@@ -8,7 +8,7 @@ class EmpContactSchema(BaseModel):
     ContactType: str
 
 class EmpContactUpdateSchema(BaseModel):
-    EmployeeID: int
+    EmpContactID: int
     PhoneNumber: str = None
     EmailAddress: EmailStr = None
     Address: str = None

@@ -15,7 +15,7 @@ class EmployeeServices:
                 logger.info("createEmployee: No Employee Found In Table !")
                 newEmployeeID = 1
             else:
-                newEmployeeID = lastEmployee.EmployeeID + 1       
+                newEmployeeID = lastEmployee.EmployeeID + 1      
             newEmployee = Employee(EmployeeID=newEmployeeID, **dict(employee))
             if not newEmployee:
                 logger.error("createEmployee: Error During Creating New Employee !")
@@ -35,6 +35,7 @@ class EmployeeServices:
                 logger.error("getAllEmployees: No Employees Found !")
                 return
             logger.info("getAllEmployees: Successfully Get All Employees !")
+            self.db.close()
             return allEmployees
         except Exception as ex:
             logger.error(f"getAllEmployees: {ex} !")
@@ -47,6 +48,7 @@ class EmployeeServices:
                 logger.error("getEmployeeByID: Employee Not Found !")
                 return
             logger.info("getEmployeeByID: Successfully Get Employee By ID !")
+            self.db.close()
             return employeeByID
         except Exception as ex:
             logger.error(f"getEmployeeByID: {ex} !")
@@ -68,6 +70,7 @@ class EmployeeServices:
                     updateEmployee[columnName] = attribute[1]
             self.db.query(Employee).filter(Employee.EmployeeID == id).update(updateEmployee)
             self.db.commit()
+            self.db.close()
             logger.info("updateEmployeeByID: Successfully Update Employee !")
             return employeeByID
         except Exception as ex:
@@ -82,6 +85,7 @@ class EmployeeServices:
                 return
             self.db.delete(employeeByID)
             self.db.commit()
+            self.db.close()
             logger.info("deleteEmployeeByID: Successfully Delete Employee !")
             return employeeByID
         except Exception as ex:
@@ -94,6 +98,7 @@ class EmployeeServices:
                 logger.info("getLastEmployee: No Last Employee Found !")
                 return
             logger.info("Successfully Found Last Employee !")
+            self.db.close()
             return lastEmployee
         except Exception as ex:
             logger.error(f"getLastEmployee: {ex} !")

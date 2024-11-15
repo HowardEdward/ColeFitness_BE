@@ -8,8 +8,6 @@ class EmployeeSchema(BaseModel):
     LastName: str
     DOB: date
     Gender: str
-    Height: Optional[float]
-    Weight: Optional[float]
 
 class EmployeeUpdateSchema(BaseModel):
     FirstName: str = None
@@ -17,6 +15,5 @@ class EmployeeUpdateSchema(BaseModel):
     LastName: str = None
     DOB: date = None
     Gender: str = None
-    Height: Optional[float] = None
-    Weight: Optional[float] = None
+
     # = None means optional, allows null values

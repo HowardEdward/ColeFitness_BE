@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from db.connectDB import connectDB
-from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController
+from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: set up database connection
@@ -23,6 +23,8 @@ app.include_router(EmployeeController.router)
 app.include_router(BranchController.router)
 app.include_router(RoleController.router)
 app.include_router(EmpContactController.router)
+app.include_router(MemberController.router)
+app.include_router(MembershipController.router)
 @app.get("/")
 def main():
     return {"message": "Hello World !"}

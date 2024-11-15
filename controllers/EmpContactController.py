@@ -21,9 +21,9 @@ def getAllEmpContact(db: Session = Depends(connectDB.connectDB)):
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
     return response
 
-@router.get("/getEmpContactByID/{id}")
-def getEmpContactByID(id: int, db: Session = Depends(connectDB.connectDB)):
-    data = EmpContactServices(db).getEmpContactByID(id)
+@router.get("/getAllContactByEmpID/{id}")
+def getAllContactByEmpID(id: int, db: Session = Depends(connectDB.connectDB)):
+    data = EmpContactServices(db).getAllContactByEmpID(id)
     if not data:
         raise HTTPException(status_code=404, detail="Employee Contact Not Found !")
     responseConfig = {
@@ -35,7 +35,7 @@ def getEmpContactByID(id: int, db: Session = Depends(connectDB.connectDB)):
     return response
 
 @router.post("/createEmpContact")
-def createEmpContact(contact: EmpContactUpdateSchema, db: Session = Depends(connectDB.connectDB)):
+def createEmpContact(contact: EmpContactSchema, db: Session = Depends(connectDB.connectDB)):
     data = EmpContactServices(db).createEmpContact(contact)
     if not data:
         raise HTTPException(status_code=405, detail="Unable To Creat New Employee Contact !")
@@ -48,13 +48,13 @@ def createEmpContact(contact: EmpContactUpdateSchema, db: Session = Depends(conn
     return response
 
 @router.put("/updateEmpContactByID/{id}")
-def updateEmpContact(id: int, contact: EmpContactSchema, db: Session = Depends(connectDB.connectDB)):
+def updateEmpContactByID(id: int, contact: EmpContactUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = EmpContactServices(db).updateEmpContactByID(id, contact)
     if not data:
         raise HTTPException(status_code=405, detail="Unable To Update Employee Contact !")
     responseConfig = {
         "data": data,
-        "status": 200,
+        "status": 202,
         "message": "Successfully Updated Employee Contact !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)

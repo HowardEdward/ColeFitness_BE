@@ -1,8 +1,9 @@
 from pydantic import BaseModel
 
 class EmpAccountSchema(BaseModel):
+    EmployeeID: int
     UserName: str
     Password: str
 
-class EmpAccountPasswordSchema(BaseModel):
+class EmpAccountPasswordUpdateSchema(BaseModel):
     Password: str
