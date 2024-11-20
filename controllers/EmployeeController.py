@@ -12,7 +12,7 @@ router = APIRouter(prefix="/employee", tags=["employee"])
 def getAllEmployee(db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = EmployeeServices(db).getAllEmployee()
     if not data:
-        raise HTTPException(status_code=404, detail="No Employees Found !")
+        raise HTTPException(status_code=404, detail="Unable To Get All Employee !")
     reponseConfig = {
         "data": data,
         "status": 200,
@@ -25,7 +25,7 @@ def getAllEmployee(db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
 def getEmployeeByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = EmployeeServices(db).getEmployeeByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Employee Not Found With This ID!")
+        raise HTTPException(status_code=404, detail="Unable To Get Employee With This ID !")
     responseConfig = {
         "data": data,
         "status": 200,
@@ -35,7 +35,7 @@ def getEmployeeByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSON
     return response
 
 @router.post("/createEmployee")
-async def createEmployee(Employee: EmployeeSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
+def createEmployee(Employee: EmployeeSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = EmployeeServices(db).createEmployee(Employee)
     if not data:
         raise HTTPException(status_code=405, detail="Unable To Creat New Employee !")
@@ -51,7 +51,7 @@ async def createEmployee(Employee: EmployeeSchema, db: Session = Depends(connect
 def updateEmployee(id: int, Employee: EmployeeUpdateSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = EmployeeServices(db).updateEmployeeByID(id, Employee)
     if not data:
-        raise HTTPException(status_code=405, detail="Not Found Employee To Update !")
+        raise HTTPException(status_code=405, detail="Unable To Update Employee !")
     responseConfig = {
         "data": data,
         "status": 202,
@@ -64,7 +64,7 @@ def updateEmployee(id: int, Employee: EmployeeUpdateSchema, db: Session = Depend
 def deleteEmployeeByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = EmployeeServices(db).deleteEmployeeByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Not Found Employee To Delete !")
+        raise HTTPException(status_code=405, detail="Unable To Delete Employee !")
     responseConfig = {
         "data": data,
         "status": 202,

@@ -8,7 +8,7 @@ class Room(Base):
     # Define Columns
     RoomID = Column(Integer, primary_key=True, autoincrement=True, default=1)
     RoomName = Column(VARCHAR(30))
-    RoomMaximum = Column(Integer(2))
+    RoomMaximum = Column(Integer)
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
 
     # Initalize Relationships

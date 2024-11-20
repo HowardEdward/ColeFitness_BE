@@ -11,4 +11,5 @@ class EmpContact(Base):
     ContactType = Column(VARCHAR(5))
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
 
-    # EmployeeRelationship = relationship("employee", back_populates="emp_contact")
+    # Initialize Relationships
+    EmployeeRelationship = relationship("employee", back_populates="emp_contact")

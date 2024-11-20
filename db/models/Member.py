@@ -19,4 +19,4 @@ class Member(Base):
     MembershipType = mapped_column(VARCHAR(10), ForeignKey("membership.MembershipType"), nullable=True)
 
     # Initialize Relationships
-    # MembershipRelationship = relationship("membership", back_populates="member")
+    MembershipRelationship = relationship("membership", back_populates="member")

@@ -1,7 +1,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from db.connectDB import connectDB
-from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController
+from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController, ClassController, ScheduleController, RoomController
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: set up database connection
@@ -18,16 +19,19 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan,
               title="Cole Fitness Center")
-app.include_router(EmpAccountController.router)
-app.include_router(EmployeeController.router)
 app.include_router(BranchController.router)
-app.include_router(RoleController.router)
+app.include_router(ClassController.router)
+app.include_router(EmpAccountController.router)
 app.include_router(EmpContactController.router)
+app.include_router(EmployeeController.router)
 app.include_router(MemberController.router)
 app.include_router(MembershipController.router)
+app.include_router(RoleController.router)
+app.include_router(RoomController.router)
+app.include_router(ScheduleController.router)
 @app.get("/")
 def main():
-    return {"message": "Hello World !"}
+    return {"message": "Hello Cole Fitness !"}
 
 if __name__ == "__main__":
     import uvicorn

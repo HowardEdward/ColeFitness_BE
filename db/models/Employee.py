@@ -20,9 +20,9 @@ class Employee(Base):
     EmpAccountID = mapped_column(Integer, ForeignKey("emp_account.EmpAccountID"),nullable=True)
 
     # Initialize Relationships
-    # RoleRelationship = relationship("role", back_populates="employee")
-    # ContactRelationship = relationship("emp_contact", back_populates="employee")
-    # AccountRelationship = relationship("emp_account", back_populates="employee")
+    RoleRelationship = relationship("role", back_populates="employee")
+    ContactRelationship = relationship("emp_contact", back_populates="employee")
+    AccountRelationship = relationship("emp_account", back_populates="employee")
 
     def __repr__(self):
         return f"EmployeeID: {self.EmployeeID} FirstName: {self.FirstName} MiddleName: {self.MiddleName} LastName: {self.LastName} DOB: {self.DOB}"

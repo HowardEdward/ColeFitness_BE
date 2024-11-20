@@ -6,13 +6,13 @@ from db import connectDB
 from schemas.EmpContactSchema import EmpContactSchema, EmpContactUpdateSchema
 from services.EmpContactServices import EmpContactServices
 
-router = APIRouter(prefix="/emp_contact", tags=["emp_contact"])
+router = APIRouter(prefix="/employee", tags=["employee_contact"])
 
 @router.get("/getAllEmpContact")
 def getAllEmpContact(db: Session = Depends(connectDB.connectDB)):
     data = EmpContactServices(db).getAllEmpContact()
     if not data:
-        raise HTTPException(status_code=404, detail="No Employee Contact Found !")
+        raise HTTPException(status_code=404, detail="Unable To Get All Employee Contact !")
     responseConfig = {
         "data": data,
         "status": 200,
@@ -25,7 +25,7 @@ def getAllEmpContact(db: Session = Depends(connectDB.connectDB)):
 def getAllContactByEmpID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EmpContactServices(db).getAllContactByEmpID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Employee Contact Not Found !")
+        raise HTTPException(status_code=404, detail="Unable To Get Contact With Employee ID!")
     responseConfig = {
         "data": data,
         "status": 200,
@@ -64,7 +64,7 @@ def updateEmpContactByID(id: int, contact: EmpContactUpdateSchema, db: Session =
 def deleteEmpContactByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EmpContactServices(db).deleteEmpContactByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Not Found Employee Contact To Delete !")
+        raise HTTPException(status_code=405, detail="Unable To Delete Employee Contact !")
     responseConfig = {
         "data": data,
         "status": 202,

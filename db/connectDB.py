@@ -6,7 +6,10 @@ from sqlalchemy.engine.url import URL
 import psycopg2
 import os
 from pathlib import Path
-from dotenv import load_dotenv#Setup Logger
+from dotenv import load_dotenv
+
+#Setup Logger
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s:%(levelname)s:%(name)s:%(message)s")

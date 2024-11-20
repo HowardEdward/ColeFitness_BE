@@ -6,13 +6,13 @@ from db import connectDB
 from schemas.MembershipSchema import MembershipSchema, MembershipUpdateSchema
 from services.MembershipServices import MembershipServices
 
-router = APIRouter(prefix="/membership", tags=["membership"])
+router = APIRouter(prefix="/member", tags=["membership"])
 
 @router.get("/getAllMembership")
 def getAllMembership(db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MembershipServices(db).getAllMembership()
     if not data:
-        raise HTTPException(status_code=404, detail="No Membership Found !")
+        raise HTTPException(status_code=404, detail="Unable To Get All Membership !")
     responseConfig = {
         "data": data,
         "status": 200,
@@ -25,7 +25,7 @@ def getAllMembership(db: Session = Depends(connectDB.connectDB)) -> JSONResponse
 def getMembershipByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MembershipServices(db).getMembershipByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Not Found Membership With Provided ID !")
+        raise HTTPException(status_code=404, detail="Unable To Get Membership With This ID !")
     responseConfig = {
         "data": data,
         "status": 200,
@@ -36,33 +36,39 @@ def getMembershipByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JS
 
 @router.post("/createMembership")
 def createMembership(membership: MembershipSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
-    response = MembershipServices(db).createMembership(membership)
-    if response["status"] == 404:
-        raise HTTPException(status_code=404, detail=response["message"])
+    data = MembershipServices(db).createMembership(membership)
+    if not data:
+        raise HTTPException(status_code=405, detail="Unable To Create Membership !")
+    responseConfig = {
+        "data": data,
+        "status": 201,
+        "message": "Successfully Create Membership !"
+    }
+    response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
     return response
 
 @router.put("/updateMembershipByID/{id}")
 def updateMembershipByID(id: int, membership: MembershipUpdateSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MembershipServices(db).updateMembershipByID(id, membership)
     if not data:
-        raise HTTPException(status_code=404, detail="Not Found Membership With Given ID To Update !")
+        raise HTTPException(status_code=405, detail="Unable To Update Membership !")
     responseConfig = {
         "data": data,
-        "status": 200,
+        "status": 202,
         "message": "Successfully Update Membership By ID !"
     }
-    response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
+    response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
     return response
 
 @router.delete("/deleteMembershipByID/{id}")
 def deleteMembershipByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MembershipServices(db).deleteMembershipByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Not Found Membership With Given ID To Delete !")
+        raise HTTPException(status_code=405, detail="Unable To Delete Membership !")
     responseConfig = {
         "data": data,
-        "status": 200,
+        "status": 202,
         "message": "Successfully Deleted Membership By ID !"
     }
-    response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
+    response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
     return response

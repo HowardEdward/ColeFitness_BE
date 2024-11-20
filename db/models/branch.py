@@ -13,4 +13,4 @@ class Branch(Base):
     BranchAddress = Column(String)
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
     # Initialize Relationships
-    # EmployeeRelationship = relationship("employee", back_populates="branch")
+    EmployeeRelationship = relationship("employee", back_populates="branch")

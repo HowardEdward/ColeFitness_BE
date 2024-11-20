@@ -9,4 +9,3 @@ class Role(Base):
     RoleKey = Column(VARCHAR(10), key="RoleKey", unique=True)
     RoleName = Column(VARCHAR(30))
 
-# Base.metadata.create_all(engine)

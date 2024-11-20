@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from db.connectDB import logger
 from db.models.Member import Member
-from schemas.MemberSchema import MemberSchema
+from schemas.MemberSchema import MemberSchema, MemberUpdateSchema
 class MemberServices:
     def __init__(self, db: Session) -> None:
         self.db = db
@@ -54,7 +54,7 @@ class MemberServices:
             logger.error(f"getMemberByID: {ex} !")
             return
     
-    def updateMemberByID(self, id: int, member: MemberSchema) -> (Member | None):
+    def updateMemberByID(self, id: int, member: MemberUpdateSchema) -> (Member | None):
         try:
             memberByID = self.db.query(Member).filter(Member.MemberID == id).first()
             if not memberByID:

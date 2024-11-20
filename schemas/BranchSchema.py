@@ -5,3 +5,9 @@ class BranchSchema(BaseModel):
     BranchAddress: str
     BranchPhoneNumber: str
     BranchEmailAddress: EmailStr
+
+class BranchUpdateSchema(BaseModel):
+    BranchName: str = None
+    BranchAddress: str = None
+    BranchPhoneNumber: str = None
+    BranchEmailAddress: EmailStr = None

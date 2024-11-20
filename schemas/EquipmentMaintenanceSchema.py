@@ -7,3 +7,9 @@ class EquipmentMaintenanceSchema(BaseModel):
     Cost: int
     Duration: str
     Description: str
+
+class EquipmentMaintenanceUpdateSchema(BaseModel):
+    MaintenanceDate: date = None
+    Cost: int = None
+    Duration: str = None
+    Description: str = None

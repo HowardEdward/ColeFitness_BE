@@ -14,6 +14,6 @@ class Equipment(Base):
     EquipmentMaintenanceID = mapped_column(Integer, ForeignKey("equipment_maintenance.EquipmentMaintenanceID"), nullable=True)
 
     # Initialize Relationships
-    # EquipmentListRelationship = relationship("equipment_list", back_populates="equipment")
-    # EquipmentMaintenanceRelationship = relationship("equipment_maintenance", back_populates="equipment")
-    # BranchRelationship = relationship("branch", back_populates="equipment")
+    EquipmentListRelationship = relationship("equipment_list", back_populates="equipment")
+    EquipmentMaintenanceRelationship = relationship("equipment_maintenance", back_populates="equipment")
+    BranchRelationship = relationship("branch", back_populates="equipment")

@@ -12,7 +12,7 @@ class EmployeeServices:
         try:
             lastEmployee = self.getLastEmployee()
             if not lastEmployee:
-                logger.info("createEmployee: No Employee Found In Table !")
+                logger.error("createEmployee: No Employee Found In Table !")
                 newEmployeeID = 1
             else:
                 newEmployeeID = lastEmployee.EmployeeID + 1      
