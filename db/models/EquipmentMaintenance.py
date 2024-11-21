@@ -10,7 +10,7 @@ class EquipmentMaintenance(Base):
     Description = Column(String)
     Duration = Column(String)
     Cost = Column(Integer)
-    EquipmentName = mapped_column(Integer, ForeignKey("equipment.EquipmentName"), nullable=True)
+    EquipmentID = mapped_column(Integer, ForeignKey("equipment.EquipmentID"), nullable=True)
 
     # Initialize Relationship
     EquipmentRelationship = relationship("equipment", back_populates="equipment_maintenance")

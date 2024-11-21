@@ -68,7 +68,7 @@ def connectDB(attempts=5, delay=2):
                 "Connection failed: %s. Retrying (%d/%d)...",
                 error,
                 attempt,
-                attempts-1,
+                attempts,
             )
             # progressive reconnect delay
             time.sleep(delay ** attempt)

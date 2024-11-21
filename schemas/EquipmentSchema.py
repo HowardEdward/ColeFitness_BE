@@ -5,3 +5,7 @@ class EquipmentSchema(BaseModel):
     EquipmentName: str
     PurchasedDate: date
 
+class EquipmentUpdateSchema(BaseModel):
+    EquipmentName: str = None
+    PurchasedDate: date = None
+

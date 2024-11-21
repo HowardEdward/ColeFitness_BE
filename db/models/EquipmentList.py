@@ -8,7 +8,7 @@ class EquipmentList(Base):
     # Define Columns
     EquipmentListID = Column(Integer, primary_key=True, autoincrement=True, default=1)
     Quantity = Column(Integer)
-    EquipmentName = mapped_column(Integer, ForeignKey("equipment.EquipmentName"), nullable=True)
+    EquipmentID = mapped_column(Integer, ForeignKey("equipment.EquipmentID"), nullable=True)
 
     # Initialize Relationship
     EquipmentRelationship = relationship("equipment", back_populates="equipment_list")

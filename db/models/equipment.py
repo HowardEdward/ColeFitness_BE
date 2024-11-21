@@ -10,10 +10,6 @@ class Equipment(Base):
     EquipmentName = Column(VARCHAR(30))
     PurchasedDate = Column(DATE)
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
-    EquipmentListID = mapped_column(Integer, ForeignKey("equipment_list.EquipmentListID"), nullable=True)
-    EquipmentMaintenanceID = mapped_column(Integer, ForeignKey("equipment_maintenance.EquipmentMaintenanceID"), nullable=True)
 
     # Initialize Relationships
-    EquipmentListRelationship = relationship("equipment_list", back_populates="equipment")
-    EquipmentMaintenanceRelationship = relationship("equipment_maintenance", back_populates="equipment")
     BranchRelationship = relationship("branch", back_populates="equipment")

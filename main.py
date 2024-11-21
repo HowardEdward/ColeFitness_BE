@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from db.connectDB import connectDB
-from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController, ClassController, ScheduleController, RoomController
+from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController, ClassController, ScheduleController, RoomController, EquipmentController, EquipmentListController, EquipmentMaintenanceController, ColeFitnessController
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
