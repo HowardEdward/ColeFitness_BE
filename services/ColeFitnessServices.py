@@ -7,15 +7,16 @@ from db.models.Employee import Employee
 from db.models.Member import Member
 from schemas.ColeFitnessSchema import ColeFitnessLoginSchema
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
+from utils import ColeFitnessJWT
+import json
 
 class ColeFitnessServices:
     def __init__(self, db: Session):
         self.db = db
     
-    def login(self, type, account: ColeFitnessLoginSchema) -> (EmpAccount | MemAccount | None):
+    def login(self, type: str, account: ColeFitnessLoginSchema) -> (EmpAccount | MemAccount | None):
         try:
-            if type == "Employee":
+            if type.title() == "Employee":
                 data = self.db.query(EmpAccount).filter(EmpAccount.UserName == account.UserName).first()
                 if not data:
                     logger.error("login: No Account Found !")
@@ -29,8 +30,17 @@ class ColeFitnessServices:
                 if not employee:
                     logger.error("login: No Employee Found !")
                     return
-                return employee
-            elif type == "Member":
+                accessTokenData = {
+                    "UserName": data.UserName,
+                    "Password": data.Password,
+                    "EmployeeID": data.EmployeeID
+                }
+                response = {
+                    "data": employee,
+                    "token": ColeFitnessJWT.createAccessToken(accessTokenData)
+                }
+                return response
+            elif type.title() == "Member":
                 data = self.db.query(MemAccount).filter(MemAccount.UserName == account.UserName).first()
                 if not data:
                     logger.error("login: No Account Found !")
@@ -44,10 +54,21 @@ class ColeFitnessServices:
                 if not member:
                     logger.error("login: No Member Found !")
                     return
-                return member
+                accessTokenData = {
+                    "UserName": data.UserName,
+                    "Password": data.Password,
+                    "MemberID": data.MemberID
+                }
+                response = {
+                    "data": member,
+                    "token": ColeFitnessJWT.createAccessToken(accessTokenData)
+                }
+                return response
             else:
                 logger.error("login: Invalid Type !")
                 return
         except Exception as ex:
             logger.error(f"login: {ex} !")
             return
+        
+    

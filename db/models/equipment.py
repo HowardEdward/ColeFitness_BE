@@ -12,4 +12,4 @@ class Equipment(Base):
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
 
     # Initialize Relationships
-    BranchRelationship = relationship("branch", back_populates="equipment")
+    BranchRelationship = relationship("Branch", backref="Equipment")

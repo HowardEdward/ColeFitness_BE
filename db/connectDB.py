@@ -23,6 +23,7 @@ logger.addHandler(handler)
 file_handler = logging.FileHandler("logs\cpy-errors.log")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
+
 dotenv_path = Path("environment/.env")
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -47,10 +48,11 @@ def connectDB(attempts=5, delay=2):
                 if not DB_URL:
                     logger.error("DB_URL environment variable is not set")
                     return None
-                print("Connecting to database...")
                 engine = create_engine(DB_URL)
+                print("Connecting to Cloud Database...")
             else:
                 engine = create_engine(URL.create(**DB_DICT))
+                print("Connecting to Local Database...")
             #Create Session
             if engine:
                 logger.debug("Engine created: %s", engine)

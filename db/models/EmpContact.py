@@ -12,4 +12,4 @@ class EmpContact(Base):
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
 
     # Initialize Relationships
-    EmployeeRelationship = relationship("employee", back_populates="emp_contact")
+    EmployeeRelationship = relationship("Employee", backref="EmpContact")

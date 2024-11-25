@@ -14,4 +14,4 @@ class MemAccount(Base):
     MemberID = mapped_column(Integer, ForeignKey("member.MemberID"))
 
     # Initialize Relationships
-    MemberRelationship = relationship("member", back_populates="mem_account")
+    MemberRelationship = relationship("Member", backref="MemAccount")

@@ -11,4 +11,4 @@ class Schedule(Base):
     RoomID = mapped_column(Integer, ForeignKey("room.RoomID"), nullable=True)
 
     # Initialize Relationships
-    RoomRelationship = relationship("room", back_populates="schedule")
+    RoomRelationship = relationship("Room", backref="Schedule")

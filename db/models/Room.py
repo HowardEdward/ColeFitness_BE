@@ -12,4 +12,4 @@ class Room(Base):
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
 
     # Initalize Relationships
-    BranchRelationship = relationship("branch", back_populates="room")
+    BranchRelationship = relationship("Branch", backref="Room")

@@ -29,6 +29,7 @@ app.include_router(MembershipController.router)
 app.include_router(RoleController.router)
 app.include_router(RoomController.router)
 app.include_router(ScheduleController.router)
+app.include_router(ColeFitnessController.router)
 @app.get("/")
 def main():
     return {"message": "Hello Cole Fitness !"}

@@ -16,7 +16,7 @@ class Employee(Base):
     RoleKey = mapped_column(VARCHAR(10), ForeignKey("role.RoleKey"),nullable=True)
 
     # Initialize Relationships
-    RoleRelationship = relationship("role", back_populates="employee")
+    RoleRelationship = relationship("Role", backref="Employee")
     
     def __repr__(self):
         return f"EmployeeID: {self.EmployeeID} FirstName: {self.FirstName} MiddleName: {self.MiddleName} LastName: {self.LastName} DOB: {self.DOB}"

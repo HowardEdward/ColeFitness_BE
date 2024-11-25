@@ -8,9 +8,9 @@ class Branch(Base):
     # Define Columns
     BranchID = Column(Integer, primary_key=True, autoincrement=True, default=1)
     BranchName = Column(VARCHAR(30))
-    BranchPhoneNumber = Column(Integer)
+    BranchPhoneNumber = Column(VARCHAR(15))
     BranchEmailAddress = Column(String)
     BranchAddress = Column(String)
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
     # Initialize Relationships
-    EmployeeRelationship = relationship("employee", back_populates="branch")
+    EmployeeRelationship = relationship("Employee", backref="Branch")

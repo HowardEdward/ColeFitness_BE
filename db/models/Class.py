@@ -12,5 +12,5 @@ class Class(Base):
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
 
     # Initialize Relationships
-    DateTimelationship = relationship("schedule", back_populates="class")
-    EmployeeRelationship = relationship("employee", back_populates="class")
+    DateTimelationship = relationship("Schedule", backref="Class")
+    EmployeeRelationship = relationship("Employee", backref="Class")

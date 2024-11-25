@@ -13,4 +13,4 @@ class EquipmentMaintenance(Base):
     EquipmentID = mapped_column(Integer, ForeignKey("equipment.EquipmentID"), nullable=True)
 
     # Initialize Relationship
-    EquipmentRelationship = relationship("equipment", back_populates="equipment_maintenance")
+    EquipmentRelationship = relationship("Equipment", backref="EquipmentMaintenance")
