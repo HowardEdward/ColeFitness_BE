@@ -13,10 +13,9 @@ router = APIRouter(prefix="/class", tags=["class"])
 def getAllClass(db: Session = Depends(connectDB.connectDB)):
     data = ClassServices(db).getAllClass()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Class !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Class !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Class !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -26,10 +25,9 @@ def getAllClass(db: Session = Depends(connectDB.connectDB)):
 def getClassByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = ClassServices(db).getClassByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Class With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Class With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Class By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -39,10 +37,9 @@ def getClassByID(id: int, db: Session = Depends(connectDB.connectDB)):
 def createClass(classSchema: ClassSchema, db: Session = Depends(connectDB.connectDB)):
     data = ClassServices(db).createClass(classSchema)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create Class !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Class !"})
     responseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Create Class !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
@@ -52,10 +49,9 @@ def createClass(classSchema: ClassSchema, db: Session = Depends(connectDB.connec
 def updateClassByID(id: int, classSchema: ClassUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = ClassServices(db).updateClassByID(id, classSchema)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Class !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Class !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Update Class By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
@@ -65,10 +61,9 @@ def updateClassByID(id: int, classSchema: ClassUpdateSchema, db: Session = Depen
 def deleteClassByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = ClassServices(db).deleteClassByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Class !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Class !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Deleted Class By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)

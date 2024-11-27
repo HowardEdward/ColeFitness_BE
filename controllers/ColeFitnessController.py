@@ -12,7 +12,7 @@ router = APIRouter(prefix="/colefitness", tags=["colefitness"])
 def login(type: str, account: ColeFitnessLoginSchema, db: Session = Depends(connectDB.connectDB)):
     data = ColeFitnessServices(db).login(type, account)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Login !")
+        raise HTTPException(status_code=404, detail={"data": [], "message": "Unable To Login !"})
     responseConfig = {
         "data": data,
         "status": 202,

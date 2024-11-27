@@ -63,7 +63,7 @@ class ColeFitnessAuthMiddleware:
             return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content={"message": f"{ex}"})
         
     def isPublicRoute(self, path: str) -> bool:
-        publicRoutes = ["/login", "/register", "/"]
+        publicRoutes = ["/colefitness/login/employee", "/colefitness/login/member", "/colefitness/register/employee", "/colefitness/register/member", "/"]
         return path in publicRoutes
     
     def extractToken(self, request: Request) -> Optional[str]:
