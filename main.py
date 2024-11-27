@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from db.connectDB import connectDB
 from controllers import EmpAccountController, EmployeeController, BranchController, RoleController, EmpContactController, MemberController, MembershipController, ClassController, ScheduleController, RoomController, EquipmentController, EquipmentListController, EquipmentMaintenanceController, ColeFitnessController
+from utils.ColeFitnessMiddleware import ColeFitnessAuthMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -19,6 +20,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan,
               title="Cole Fitness Center")
+authenticateMiddleware: ColeFitnessAuthMiddleware = ColeFitnessAuthMiddleware()
+app.middleware("http")(authenticateMiddleware.authenticateRequest)
 app.include_router(BranchController.router)
 app.include_router(ClassController.router)
 app.include_router(EmpAccountController.router)
