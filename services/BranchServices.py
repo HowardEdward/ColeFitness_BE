@@ -9,21 +9,25 @@ class BranchServices:
         self.db = db
 
     def createBranch(self, branch: BranchSchema) -> (Branch | None):
-        lastBranch = self.db.query(func.max(Branch.BranchID)).first()
-        if not all(lastBranch):
-            logger.error("createBranch: No Branch Found In Table !")
-            newBranchID = 1
-        else:
-            newBranchID = lastBranch[0] + 1
-        newBranch = Branch(BranchID=newBranchID,**dict(branch))
-        self.db.add(newBranch)
-        if not newBranch:
-            logger.error("createBranch: Error During Creating New Branch !")
+        try:
+            lastBranch = self.db.query(func.max(Branch.BranchID)).first()
+            if not all(lastBranch):
+                logger.error("createBranch: No Branch Found In Table !")
+                newBranchID = 1
+            else:
+                newBranchID = lastBranch[0] + 1
+            newBranch = Branch(BranchID=newBranchID,**dict(branch))
+            if not newBranch:
+                logger.error("createBranch: Error During Creating New Branch !")
+                return
+            self.db.add(newBranch)
+            self.db.commit()
+            self.db.close()
+            logger.info("createBranch: Successfully Create New Branch !")
+            return newBranch
+        except Exception as ex:
+            logger.error(f"createBranch: {ex} !")
             return
-        self.db.commit()
-        self.db.close()
-        logger.info("createBranch: Successfully Create New Branch !")
-        return newBranch
     
     def getAllBranch(self) -> (list[Branch] | None):
         try:
@@ -88,3 +92,4 @@ class BranchServices:
         except Exception as ex:
             logger.error(f"deleteBranchByID: {ex} !")
             return
+        

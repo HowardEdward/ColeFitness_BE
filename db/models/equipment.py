@@ -7,7 +7,7 @@ class Equipment(Base):
 
     # Define Columns
     EquipmentID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    EquipmentName = Column(VARCHAR(30))
+    EquipmentName = Column(VARCHAR(30), unique=True)
     PurchasedDate = Column(DATE)
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
 

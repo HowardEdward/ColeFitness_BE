@@ -6,8 +6,8 @@ class Room(Base):
     __tablename__ = "room"
 
     # Define Columns
-    RoomID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    RoomName = Column(VARCHAR(30))
+    RoomID = Column(Integer, primary_key=True, autoincrement=True, default=1, unique=True)
+    RoomName = Column(VARCHAR(30), unique=True)
     RoomMaximum = Column(Integer)
     BranchID = mapped_column(Integer, ForeignKey("branch.BranchID"), nullable=True)
 

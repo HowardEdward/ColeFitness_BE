@@ -6,11 +6,11 @@ class Branch(Base):
     __tablename__ = "branch"
 
     # Define Columns
-    BranchID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    BranchName = Column(VARCHAR(30))
+    BranchID = Column(Integer, primary_key=True, autoincrement=True)
+    BranchName = Column(VARCHAR(30), unique=True)
     BranchPhoneNumber = Column(VARCHAR(15))
     BranchEmailAddress = Column(String)
-    BranchAddress = Column(String)
+    BranchAddress = Column(String, unique=True)
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
     # Initialize Relationships
     EmployeeRelationship = relationship("Employee", backref="Branch")

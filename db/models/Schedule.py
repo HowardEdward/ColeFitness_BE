@@ -7,8 +7,8 @@ class Schedule(Base):
 
     # Define Columns
     ScheduleID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    DateTime = Column(TIMESTAMP, unique=True)
-    RoomID = mapped_column(Integer, ForeignKey("room.RoomID"), nullable=True)
+    DateTime = Column(TIMESTAMP)
+    RoomID = mapped_column(Integer, ForeignKey("room.RoomID"), nullable=True, unique=True)
 
     # Initialize Relationships
     RoomRelationship = relationship("Room", backref="Schedule")

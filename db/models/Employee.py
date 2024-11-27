@@ -7,7 +7,7 @@ class Employee(Base):
 
     # Define Columns
     EmployeeID = Column(Integer, primary_key=True, nullable=False, autoincrement=True, default=1, unique=True)
-    FirstName = Column(VARCHAR(30))
+    FirstName = Column(VARCHAR(30), unique=True)
     MiddleName = Column(VARCHAR(30), nullable=True)
     LastName = Column(VARCHAR(30))
     Gender = Column(VARCHAR(10))

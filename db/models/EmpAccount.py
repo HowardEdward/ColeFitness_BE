@@ -6,9 +6,8 @@ class EmpAccount(Base):
     __tablename__ = "emp_account"
     # Define Columns
     EmpAccountID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    UserName = Column(String)
+    UserName = Column(VARCHAR(35), unique=True)
     Password = Column(String)
-    AccountType = Column(VARCHAR(10))
     Status = Column(Boolean, default=False)
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
 

@@ -7,9 +7,8 @@ class MemAccount(Base):
 
     # Define Columns
     AccountID = Column(Integer, primary_key=True, autoincrement=True, default=1)
-    UserName = Column(String)
+    UserName = Column(String, unique=True)
     Password = Column(String)
-    AccountType = Column(VARCHAR(10))
     Status = Column(Boolean, default=False)
     MemberID = mapped_column(Integer, ForeignKey("member.MemberID"))
 

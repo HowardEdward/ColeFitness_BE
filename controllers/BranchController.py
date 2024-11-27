@@ -13,11 +13,10 @@ router = APIRouter(prefix="/branch", tags=["branch"])
 def createBranch(branch: BranchSchema, db: Session = Depends(connectDB.connectDB)):
     data = BranchServices(db).createBranch(branch)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create New Branch !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Branch !"})
     responseConfig = {
         "data": data,
-        "status": 201,
-        "message": "Successfully Create New Branch !"
+        "message": "Successfully Create Branch !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
     return response
@@ -26,10 +25,9 @@ def createBranch(branch: BranchSchema, db: Session = Depends(connectDB.connectDB
 def getAllBranch(db: Session = Depends(connectDB.connectDB)):
     data = BranchServices(db).getAllBranch()
     if not data:
-        raise HTTPException(status_code=404, detail="No Branch Found !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Branch !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Branch !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -39,10 +37,9 @@ def getAllBranch(db: Session = Depends(connectDB.connectDB)):
 def getBranchByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = BranchServices(db).getBranchByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Branch Not Found With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Branch Not Found With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Branch By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -52,7 +49,7 @@ def getBranchByID(id: int, db: Session = Depends(connectDB.connectDB)):
 def updateBranch(id: int, branch: BranchUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = BranchServices(db).updateBranchByID(id, branch)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Branch !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Branch !"})
     responseConfig = {
         "data": data,
         "status": 202,
@@ -65,7 +62,7 @@ def updateBranch(id: int, branch: BranchUpdateSchema, db: Session = Depends(conn
 def deleteBranchByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = BranchServices(db).deleteBranchByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Branch !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Branch !"})
     responseConfig = {
         "data": data,
         "status": 202,
