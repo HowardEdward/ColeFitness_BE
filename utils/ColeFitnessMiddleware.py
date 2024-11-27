@@ -31,7 +31,7 @@ class ColeFitnessAuthMiddleware:
     def __init__(self):
         self.SECRET_KEY = os.environ.get("JWT_SECRET_KEY")
         self.ALGORITHM = os.environ.get("ALGORITHM")
-        self.ACCESS_TOKEN_EXPIRE_MINUTES = 30
+        self.ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES"))
     
     async def authenticateRequest(self, request: Request, call_next):
         try:

@@ -13,3 +13,4 @@ class Equipment(Base):
 
     # Initialize Relationships
     BranchRelationship = relationship("Branch", backref="Equipment")
+    

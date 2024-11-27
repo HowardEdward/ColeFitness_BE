@@ -12,10 +12,9 @@ router = APIRouter(prefix="/equipment", tags=["equipment_list"])
 def getAllEquipmentList(db: Session = Depends(connectDB.connectDB)):
     data = EquipmentListServices(db).getAllEquipmentList()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Equipment List !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Equipment List !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Equipment List !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -25,10 +24,9 @@ def getAllEquipmentList(db: Session = Depends(connectDB.connectDB)):
 def getEquipmentListByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentListServices(db).getEquipmentListByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Equipment List With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Equipment List With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Equipment List By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -38,10 +36,9 @@ def getEquipmentListByID(id: int, db: Session = Depends(connectDB.connectDB)):
 def createEquipmentList(Equipment: EquipmentListSchema, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentListServices(db).createEquipmentList(Equipment)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create Equipment List !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Equipment List !"})
     responseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Created Equipment List !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
@@ -51,10 +48,9 @@ def createEquipmentList(Equipment: EquipmentListSchema, db: Session = Depends(co
 def updateEquipmentListByID(id: int, Equipment: EquipmentListUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentListServices(db).updateEquipmentListByID(id, Equipment)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Equipment List !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Equipment List !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Updated Equipment List By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
@@ -64,10 +60,9 @@ def updateEquipmentListByID(id: int, Equipment: EquipmentListUpdateSchema, db: S
 def deleteEquipmentListByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentListServices(db).deleteEquipmentListByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Equipment List !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Equipment List !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Deleted Equipment List By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)

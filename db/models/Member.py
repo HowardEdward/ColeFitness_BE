@@ -22,3 +22,4 @@ class Member(Base):
     
     # Initialize Relationships
     MembershipRelationship = relationship("Membership", backref="Member")
+    

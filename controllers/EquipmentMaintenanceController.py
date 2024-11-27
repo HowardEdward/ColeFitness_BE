@@ -12,10 +12,9 @@ router = APIRouter(prefix="/equipment", tags=["equipment_maintenance"])
 def getAllEquipmentMaintenance(db: Session = Depends(connectDB.connectDB)):
     data = EquipmentMaintenanceServices(db).getAllEquipmentMaintenance()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Equipment Maintenance !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Equipment Maintenance !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Equipment Maintenance !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -25,10 +24,9 @@ def getAllEquipmentMaintenance(db: Session = Depends(connectDB.connectDB)):
 def getEquipmentMaintenanceByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentMaintenanceServices(db).getEquipmentMaintenanceByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Equipment Maintenance With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Equipment Maintenance With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Equipment Maintenance By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -38,10 +36,9 @@ def getEquipmentMaintenanceByID(id: int, db: Session = Depends(connectDB.connect
 def createEquipmentMaintenance(EquipmentMaintenance: EquipmentMaintenanceSchema, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentMaintenanceServices(db).createEquipmentMaintenance(EquipmentMaintenance)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create Equipment Maintenance !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Equipment Maintenance !"})
     responseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Created Equipment Maintenance !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
@@ -51,10 +48,9 @@ def createEquipmentMaintenance(EquipmentMaintenance: EquipmentMaintenanceSchema,
 def updateEquipmentMaintenanceByID(id: int, EquipmentMaintenance: EquipmentMaintenanceUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentMaintenanceServices(db).updateEquipmentMaintenanceByID(id, EquipmentMaintenance)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Equipment Maintenance !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Equipment Maintenance !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Updated Equipment Maintenance By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
@@ -64,10 +60,9 @@ def updateEquipmentMaintenanceByID(id: int, EquipmentMaintenance: EquipmentMaint
 def deleteEquipmentMaintenanceByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = EquipmentMaintenanceServices(db).deleteEquipmentMaintenanceByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Equipment Maintenance !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Equipment Maintenance !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Deleted Equipment Maintenance By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)

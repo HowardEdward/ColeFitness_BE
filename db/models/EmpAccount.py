@@ -13,5 +13,3 @@ class EmpAccount(Base):
 
     # Initialize Relationships
     EmployeeRelationship = relationship("Employee", backref="EmpAccount")
-    
-

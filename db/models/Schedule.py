@@ -12,3 +12,4 @@ class Schedule(Base):
 
     # Initialize Relationships
     RoomRelationship = relationship("Room", backref="Schedule")
+    

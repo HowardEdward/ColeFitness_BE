@@ -12,5 +12,6 @@ class Branch(Base):
     BranchEmailAddress = Column(String)
     BranchAddress = Column(String, unique=True)
     EmployeeID = mapped_column(Integer, ForeignKey("employee.EmployeeID"), nullable=True)
+    
     # Initialize Relationships
     EmployeeRelationship = relationship("Employee", backref="Branch")

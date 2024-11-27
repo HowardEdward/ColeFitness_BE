@@ -12,3 +12,4 @@ class EquipmentList(Base):
 
     # Initialize Relationship
     EquipmentRelationship = relationship("Equipment", backref="EquipmentList")
+    

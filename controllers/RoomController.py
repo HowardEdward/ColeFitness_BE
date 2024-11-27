@@ -12,10 +12,9 @@ router = APIRouter(prefix="/room", tags=["room"])
 def getAllRoom(db: Session = Depends(connectDB.connectDB)):
     data = RoomServices(db).getAllRoom()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Room !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Room !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Room !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -25,10 +24,9 @@ def getAllRoom(db: Session = Depends(connectDB.connectDB)):
 def getRoomByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = RoomServices(db).getRoomByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Room With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Room With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Room By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -38,10 +36,9 @@ def getRoomByID(id: int, db: Session = Depends(connectDB.connectDB)):
 def createRoom(room: RoomSchema, db: Session = Depends(connectDB.connectDB)):
     data = RoomServices(db).createRoom(room)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create Room !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Room !"})
     responseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Create Room !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
@@ -51,10 +48,9 @@ def createRoom(room: RoomSchema, db: Session = Depends(connectDB.connectDB)):
 def updateRoomByID(id: int, room: RoomUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = RoomServices(db).updateRoomByID(id, room)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Room !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Room !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Update Room By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
@@ -64,10 +60,9 @@ def updateRoomByID(id: int, room: RoomUpdateSchema, db: Session = Depends(connec
 def deleteRoomByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = RoomServices(db).deleteRoomByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Room !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Room !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Deleted Room By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)

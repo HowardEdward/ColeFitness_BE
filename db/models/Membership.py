@@ -10,5 +10,3 @@ class Membership(Base):
     MembershipPrice = Column(Integer)
     MembershipDescription = Column(String)
     MembershipDuration = Column(String)
-    
-    # Initialize Relationships

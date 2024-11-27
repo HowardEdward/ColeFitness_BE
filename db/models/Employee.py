@@ -18,5 +18,3 @@ class Employee(Base):
     # Initialize Relationships
     RoleRelationship = relationship("Role", backref="Employee")
     
-    def __repr__(self):
-        return f"EmployeeID: {self.EmployeeID} FirstName: {self.FirstName} MiddleName: {self.MiddleName} LastName: {self.LastName} DOB: {self.DOB}"

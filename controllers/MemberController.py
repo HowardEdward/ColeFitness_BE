@@ -12,10 +12,9 @@ router = APIRouter(prefix="/member", tags=["member"])
 def getAllMember(db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MemberServices(db).getAllMember()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Member !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Member !"})
     reponseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Member !"
     }
     response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_200_OK)
@@ -25,10 +24,9 @@ def getAllMember(db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
 def getMemberByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MemberServices(db).getMemberByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Member With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Member With This ID !"})
     reponseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Member !"
     }
     response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_200_OK)
@@ -38,10 +36,9 @@ def getMemberByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONRe
 def createMember(member: MemberSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MemberServices(db).createMember(member)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Creat New Member !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Creat New Member !"})
     reponseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Creat New Member !"
     }
     response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_201_CREATED)
@@ -51,10 +48,9 @@ def createMember(member: MemberSchema, db: Session = Depends(connectDB.connectDB
 def updateMemberByID(id: int, member: MemberUpdateSchema, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MemberServices(db).updateMemberByID(id, member)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Member !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Member !"})
     reponseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Update Member !"
     }
     response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_202_ACCEPTED)
@@ -64,11 +60,10 @@ def updateMemberByID(id: int, member: MemberUpdateSchema, db: Session = Depends(
 def deleteMemberByID(id: int, db: Session = Depends(connectDB.connectDB)) -> JSONResponse:
     data = MemberServices(db).deleteMemberByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Member !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Member !"})
     reponseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Delete Member !"
     }
-    response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_200_OK)
+    response = JSONResponse(content=jsonable_encoder(reponseConfig), status_code= status.HTTP_202_ACCEPTED)
     return response

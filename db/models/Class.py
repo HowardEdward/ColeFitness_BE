@@ -14,3 +14,4 @@ class Class(Base):
     # Initialize Relationships
     ScheduleRelationship = relationship("Schedule", backref="Class")
     EmployeeRelationship = relationship("Employee", backref="Class")
+    

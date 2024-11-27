@@ -13,10 +13,9 @@ router = APIRouter(prefix="/role", tags=["role"])
 def getAllRole(db: Session = Depends(connectDB.connectDB)):
     data = RoleServices(db).getAllRole()
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get All Role !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get All Role !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get All Role !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -26,10 +25,9 @@ def getAllRole(db: Session = Depends(connectDB.connectDB)):
 def getRoleByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = RoleServices(db).getRoleByID(id)
     if not data:
-        raise HTTPException(status_code=404, detail="Unable To Get Role With This ID !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Get Role With This ID !"})
     responseConfig = {
         "data": data,
-        "status": 200,
         "message": "Successfully Get Role By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_200_OK)
@@ -39,10 +37,9 @@ def getRoleByID(id: int, db: Session = Depends(connectDB.connectDB)):
 def createRole(role: RoleSchema, db: Session = Depends(connectDB.connectDB)):
     data = RoleServices(db).createRole(role)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Create Role !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Create Role !"})
     responseConfig = {
         "data": data,
-        "status": 201,
         "message": "Successfully Create Role !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_201_CREATED)
@@ -52,10 +49,9 @@ def createRole(role: RoleSchema, db: Session = Depends(connectDB.connectDB)):
 def updateRoleByID(id: int, role: RoleUpdateSchema, db: Session = Depends(connectDB.connectDB)):
     data = RoleServices(db).updateRoleByID(id, role)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Update Role !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Update Role !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Update Role By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)
@@ -65,10 +61,9 @@ def updateRoleByID(id: int, role: RoleUpdateSchema, db: Session = Depends(connec
 def deleteRoleByID(id: int, db: Session = Depends(connectDB.connectDB)):
     data = RoleServices(db).deleteRoleByID(id)
     if not data:
-        raise HTTPException(status_code=405, detail="Unable To Delete Role !")
+        raise HTTPException(status_code=200, detail={"data": [], "message": "Unable To Delete Role !"})
     responseConfig = {
         "data": data,
-        "status": 202,
         "message": "Successfully Deleted Role By ID !"
     }
     response = JSONResponse(content=jsonable_encoder(responseConfig), status_code=status.HTTP_202_ACCEPTED)

@@ -14,3 +14,4 @@ class MemAccount(Base):
 
     # Initialize Relationships
     MemberRelationship = relationship("Member", backref="MemAccount")
+    
